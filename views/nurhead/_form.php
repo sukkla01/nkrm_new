@@ -3,12 +3,14 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\jui\DatePicker;
+use yii\helpers\ArrayHelper;
+use app\models\NurUserRec;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Nurhead */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<?php print_r($aaa) ; ?>
+
 <div class="nurhead-form">
 
     <?php $form = ActiveForm::begin(); ?>
@@ -29,36 +31,116 @@ use yii\jui\DatePicker;
         <div class="col-md-3">
             <h4><label class="label label-success"> <?php echo 'พยาบาล OPD'; ?></label></h4>
         </div>
+
         <div class="col-md-3">
-            <?= $form->field($model, 'opdnur1')->textInput(['maxlength' => true]) ?>
-           
+            <?= Html::label('พยาบาล1', 'opdnur1'); ?>
+            <?=
+            Html::dropDownList('opdnur11', null, ArrayHelper::map(NurUserRec::find()
+                                    ->where('dept=1')
+                                    ->orderBy('code ASC')
+                                    ->all(), 'code', 'fname'), [
+                'class' => 'form-control',
+                'id' => 'code',
+                'prompt' => '-เลือกพยาบาล-',
+                    ]
+            );
+            ?>
+
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'opdnur2')->textInput(['maxlength' => true]) ?>
+            <?= Html::label('พยาบาล2', 'opdnur2'); ?>
+            <?=
+            Html::dropDownList('opdnur2', null, ArrayHelper::map(NurUserRec::find()
+                                    ->where('dept=1')
+                                    ->orderBy('code ASC')
+                                    ->all(), 'code', 'fname'), [
+                'class' => 'form-control',
+                'id' => 'code',
+                'prompt' => '-เลือกพยาบาล-',
+                    ]
+            );
+            ?>
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'opdnur3')->textInput(['maxlength' => true]) ?>
+            <?= Html::label('พยาบาล3', 'opdnur3'); ?>
+            <?=
+            Html::dropDownList('opdnur3', null, ArrayHelper::map(NurUserRec::find()
+                                    ->where('dept=1')
+                                    ->orderBy('code ASC')
+                                    ->all(), 'code', 'fname'), [
+                'class' => 'form-control',
+                'id' => 'code',
+                'prompt' => '-เลือกพยาบาล-',
+                    ]
+            );
+            ?>
         </div>
+        <div class="col-md-12">&nbsp;</div>
         <div class="col-md-3">
 
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'opdnur4')->textInput(['maxlength' => true]) ?>
+            <?= Html::label('พยาบาล4', 'opdnur4'); ?>
+            <?=
+            Html::dropDownList('opdnur4', null, ArrayHelper::map(NurUserRec::find()
+                                    ->where('dept=1')
+                                    ->orderBy('code ASC')
+                                    ->all(), 'code', 'fname'), [
+                'class' => 'form-control',
+                'id' => 'code',
+                'prompt' => '-เลือกพยาบาล-',
+                    ]
+            );
+            ?>
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'opddoctor')->textInput(['maxlength' => true]) ?>
+            <?= Html::label('แพทย์', 'opddoctor'); ?>
+            <?=
+            Html::dropDownList('opddoctor', null, ArrayHelper::map(NurUserRec::find()
+                                    ->where('dept=5')
+                                    ->orderBy('code ASC')
+                                    ->all(), 'code', 'fname'), [
+                'class' => 'form-control',
+                'id' => 'code',
+                'prompt' => '-เลือกแพทย์-',
+                    ]
+            );
+            ?>
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'opdaides')->textInput(['maxlength' => true]) ?>
+            <?= Html::label('ผู้ช่วยเหลือคนไข้', 'opdaides'); ?>
+            <?=
+            Html::dropDownList('opdaides', null, ArrayHelper::map(NurUserRec::find()
+                                    ->where('dept=6')
+                                    ->orderBy('code ASC')
+                                    ->all(), 'code', 'fname'), [
+                'class' => 'form-control',
+                'id' => 'code',
+                'prompt' => '-เลือกผู้ช่วยเหลือคนไข้-',
+                    ]
+            );
+            ?>
         </div>
+        <div class="col-md-12">&nbsp;</div>
         <div class="col-md-3">
 
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'opdworker')->textInput(['maxlength' => true]) ?>
+            <?= Html::label('คนงาน', 'opdworker'); ?>
+            <?=
+            Html::dropDownList('opdworker', null, ArrayHelper::map(NurUserRec::find()
+                                    ->where('dept=6')
+                                    ->orderBy('code ASC')
+                                    ->all(), 'code', 'fname'), [
+                'class' => 'form-control',
+                'id' => 'code',
+                'prompt' => '-เลือกคนงาน-',
+                    ]
+            );
+            ?>
         </div>
     </div>
-
+    <div class="col-md-12">&nbsp;</div>
     <div class="col-md-12" >
         <div class="col-md-3">
             <h4><label class="label label-success"> <?php echo 'พยาบาล ER'; ?></label></h4>
