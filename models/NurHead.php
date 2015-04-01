@@ -64,6 +64,7 @@ class NurHead extends \yii\db\ActiveRecord
         return [
             [['vstdate'], 'safe'],
             [['centersupport', 'kitchen', 'xrayroom', 'carman'], 'string'],
+            [['vstdate','duty'],'required'],
             [['opdnur1', 'opdnur2', 'opdnur3', 'opdnur4', 'opddoctor', 'opdaides', 'opdworker', 'ernur1', 'ernur2', 'ernur3', 'ernur4', 'erdoctor', 'eraides', 'erworker', 'lrnur1', 'lrnur2', 'lrnur3', 'lrnur4', 'lrdoctor', 'lraides', 'lrworker', 'wardnur1', 'wardnur2', 'wardnur3', 'wardnur4', 'warddoctor', 'wardaides', 'wardworker', 'cardroom', 'launder', 'duty', 'staff'], 'string', 'max' => 10]
         ];
     }

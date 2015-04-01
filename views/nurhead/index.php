@@ -7,16 +7,16 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\NurheadSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Nurheads';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'บันทึกเวรตรวจการพยาบาล';
+$this->params['breadcrumbs'][] = 'บันทึกเวรตรวจการพยาบาล';
 ?>
 <div class="nurhead-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?php echo 'บันทึกเวรตรวจการพยาบาล'; ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Nurhead', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('บันทึก', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

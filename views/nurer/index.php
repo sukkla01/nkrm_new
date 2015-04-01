@@ -7,16 +7,16 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\NurerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Nurers';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'ผู้ป่วยฉุกเฉิน';
+$this->params['breadcrumbs'][] = 'ผู้ป่วยฉุกเฉิน';
 ?>
 <div class="nurer-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?php echo 'บันทึกผู้ป่วยฉุกเฉิน'; ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Nurer', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('บันทึก', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

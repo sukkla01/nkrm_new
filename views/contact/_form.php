@@ -11,7 +11,7 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model app\models\Contact */
 /* @var $form yii\widgets\ActiveForm */
-if($model->isNewRecord){
+/*if($model->isNewRecord){
     $province = [];
     $district = [];
     $tambon = [];
@@ -27,7 +27,7 @@ if($model->isNewRecord){
             ->where(['province_id'=>$province])->all(), 'id', 'district_name');
     $tambon_list = ArrayHelper::map(Tambon::find()
             ->where(['district_id'=>$district])->all(), 'id', 'tambon_name');
-}
+}*/
 
 ?>
 
@@ -51,13 +51,7 @@ if($model->isNewRecord){
                     'class'=>'form-control',
                     'id'=>'province',
                     'prompt'=>'-เลือกจังหวัด-',
-                    'onchange'=>'
-                        $.get("'.Url::toRoute('base/loaddistrict').'",
-                        {id:$(this).val()})
-                        .done(function(data){
-                            $("select#district").html(data);
-                        });
-                    '
+                    
                 ]
                 );?>
     </div>

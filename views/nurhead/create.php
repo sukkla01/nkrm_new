@@ -6,9 +6,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Nurhead */
 
-$this->title = 'Create Nurhead';
-$this->params['breadcrumbs'][] = ['label' => 'Nurheads', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'บันทึกเวรตรวจการพยาบาล';
+$this->params['breadcrumbs'][] = ['label' => 'เวรตรวจการพยาบาล', 'url' => ['index']];
+$this->params['breadcrumbs'][] =    'บันทึกเวรตรวจการพยาบาล';
 ?>
 <div class="nurhead-create">
 

@@ -24,7 +24,7 @@ use yii\jui\DatePicker;
       'options'=>['class'=>'form-control']
     ]);
     ?>
-
+     <?= $form->field($model, 'duty')->dropDownList(['1'=>'ดึก','2'=>'เช้า','3'=>'บ่าย'],['prompt'=>'--กรุณาเลือกเวร--']) ?>
     <?= $form->field($model, 'vnonac')->textInput() ?>
 
     <?= $form->field($model, 'vemergency')->textInput() ?>
@@ -45,12 +45,10 @@ use yii\jui\DatePicker;
 
     <?= $form->field($model, 'vadmit')->textInput() ?>
 
-    <?= $form->field($model, 'duty')->dropDownList(['1'=>'ดึก','2'=>'เช้า','3'=>'บ่าย'],['prompt'=>'--กรุณาเลือกเวร--']) ?>
-
     <?= $form->field($model, 'staff')->textInput(['maxlength' => true,'value'=>Yii::$app->user->displayName]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'บันทึก' : 'แก้ไข', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

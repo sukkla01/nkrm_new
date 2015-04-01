@@ -47,4 +47,9 @@ class NurUserRec extends \yii\db\ActiveRecord
             'dept' => 'แผนก',
         ];
     }
+    
+    public function getfullName()
+        {
+                return $this->fname.' '.$this->lname;
+        }
 }

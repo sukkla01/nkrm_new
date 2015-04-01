@@ -14,267 +14,407 @@ use app\models\NurUserRec;
 <div class="nurhead-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?=
-    $form->field($model, 'vstdate')->widget(DatePicker::className(), [
-        'language' => 'th',
-        'dateFormat' => 'yyyy-MM-dd',
-        //'value'=>$date1,
-        'clientOptions' => [
-            'changeMonth' => true,
-            'changeYear' => true,
-        ],
-        'options' => ['class' => 'form-control']
-    ]);
-    ?>
-    <div class="col-md-12" >
-        <div class="col-md-3">
-            <h4><label class="label label-success"> <?php echo 'พยาบาล OPD'; ?></label></h4>
-        </div>
-
-        <div class="col-md-3">
-            <?= Html::label('พยาบาล1', 'opdnur1'); ?>
-            <?=
-            Html::dropDownList('opdnur11', null, ArrayHelper::map(NurUserRec::find()
-                                    ->where('dept=1')
-                                    ->orderBy('code ASC')
-                                    ->all(), 'code', 'fname'), [
-                'class' => 'form-control',
-                'id' => 'code',
-                'prompt' => '-เลือกพยาบาล-',
-                    ]
-            );
-            ?>
-
-        </div>
-        <div class="col-md-3">
-            <?= Html::label('พยาบาล2', 'opdnur2'); ?>
-            <?=
-            Html::dropDownList('opdnur2', null, ArrayHelper::map(NurUserRec::find()
-                                    ->where('dept=1')
-                                    ->orderBy('code ASC')
-                                    ->all(), 'code', 'fname'), [
-                'class' => 'form-control',
-                'id' => 'code',
-                'prompt' => '-เลือกพยาบาล-',
-                    ]
-            );
-            ?>
-        </div>
-        <div class="col-md-3">
-            <?= Html::label('พยาบาล3', 'opdnur3'); ?>
-            <?=
-            Html::dropDownList('opdnur3', null, ArrayHelper::map(NurUserRec::find()
-                                    ->where('dept=1')
-                                    ->orderBy('code ASC')
-                                    ->all(), 'code', 'fname'), [
-                'class' => 'form-control',
-                'id' => 'code',
-                'prompt' => '-เลือกพยาบาล-',
-                    ]
-            );
-            ?>
-        </div>
-        <div class="col-md-12">&nbsp;</div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-            <?= Html::label('พยาบาล4', 'opdnur4'); ?>
-            <?=
-            Html::dropDownList('opdnur4', null, ArrayHelper::map(NurUserRec::find()
-                                    ->where('dept=1')
-                                    ->orderBy('code ASC')
-                                    ->all(), 'code', 'fname'), [
-                'class' => 'form-control',
-                'id' => 'code',
-                'prompt' => '-เลือกพยาบาล-',
-                    ]
-            );
-            ?>
-        </div>
-        <div class="col-md-3">
-            <?= Html::label('แพทย์', 'opddoctor'); ?>
-            <?=
-            Html::dropDownList('opddoctor', null, ArrayHelper::map(NurUserRec::find()
-                                    ->where('dept=5')
-                                    ->orderBy('code ASC')
-                                    ->all(), 'code', 'fname'), [
-                'class' => 'form-control',
-                'id' => 'code',
-                'prompt' => '-เลือกแพทย์-',
-                    ]
-            );
-            ?>
-        </div>
-        <div class="col-md-3">
-            <?= Html::label('ผู้ช่วยเหลือคนไข้', 'opdaides'); ?>
-            <?=
-            Html::dropDownList('opdaides', null, ArrayHelper::map(NurUserRec::find()
-                                    ->where('dept=6')
-                                    ->orderBy('code ASC')
-                                    ->all(), 'code', 'fname'), [
-                'class' => 'form-control',
-                'id' => 'code',
-                'prompt' => '-เลือกผู้ช่วยเหลือคนไข้-',
-                    ]
-            );
-            ?>
-        </div>
-        <div class="col-md-12">&nbsp;</div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-            <?= Html::label('คนงาน', 'opdworker'); ?>
-            <?=
-            Html::dropDownList('opdworker', null, ArrayHelper::map(NurUserRec::find()
-                                    ->where('dept=6')
-                                    ->orderBy('code ASC')
-                                    ->all(), 'code', 'fname'), [
-                'class' => 'form-control',
-                'id' => 'code',
-                'prompt' => '-เลือกคนงาน-',
-                    ]
-            );
-            ?>
-        </div>
-    </div>
-    <div class="col-md-12">&nbsp;</div>
-    <div class="col-md-12" >
-        <div class="col-md-3">
-            <h4><label class="label label-success"> <?php echo 'พยาบาล ER'; ?></label></h4>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'ernur1')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'ernur2')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'ernur3')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'ernur4')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'erdoctor')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'eraides')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'erworker')->textInput(['maxlength' => true]) ?>
-        </div>
-    </div>
-
-    <div class="col-md-12" >
-        <div class="col-md-3">
-            <h4><label class="label label-success"> <?php echo 'พยาบาล LR'; ?></label></h4>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'lrnur1')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'lrnur2')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'lrnur3')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'lrnur4')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'lrdoctor')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'lraides')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'lrworker')->textInput(['maxlength' => true]) ?>
-        </div>
-    </div>
-
-
-    <div class="col-md-12" >
-        <div class="col-md-3">
-            <h4><label class="label label-success"> <?php echo 'พยาบาล WARD'; ?></label></h4>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'wardnur1')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'wardnur3')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'lrnur3')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'wardnur4')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'warddoctor')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'wardaides')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'wardworker')->textInput(['maxlength' => true]) ?>
-
-        </div>
-    </div>
-
-
-    <div class="col-md-12" >
-        <div class="col-md-3">
-            <h4><label class="label label-success"> <?php echo 'ทั่วไป'; ?></label></h4>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'cardroom')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'launder')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'centersupport')->textInput() ?>
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'kitchen')->textInput() ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'xrayroom')->textInput() ?>
-        </div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'carman')->textInput() ?>
-        </div>
-
-    </div>
     <div class="col-md-12">
         <div class="col-md-6">
+            <?=
+            $form->field($model, 'vstdate')->widget(DatePicker::className(), [
+                'language' => 'th',
+                'dateFormat' => 'yyyy-MM-dd',
+                //'value'=>$date1,
+                'clientOptions' => [
+                    'changeMonth' => true,
+                    'changeYear' => true,
+                ],
+                'options' => ['class' => 'form-control']
+            ]);
+            ?>
+        </div>
+    </div>
+
+
+    <div class="col-md-12">
+        <div class="col-md-6">
+
             <?= $form->field($model, 'duty')->dropDownList(['1' => 'ดึก', '2' => 'เช้า', '3' => 'บ่าย'], ['prompt' => '--กรุณาเลือกเวร--']) ?>
         </div>
     </div>
+
+    <div class="col-md-12">
+        <div class="panel panel-info">
+
+            <div class="panel-body">
+                <div class="col-md-3">
+                    <h4><label class="label label-success"> <?php echo 'พยาบาล OPD'; ?></label></h4>
+                </div>
+
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'opdnur1')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=1')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'opdnur2')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=1')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'opdnur3')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=1')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'opdnur4')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=1')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'opddoctor')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=5')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกแพทย์--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'opdaides')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=6')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกผู้ช่วยเหลือคนไข้--'])
+                    ?>
+                </div>
+
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'opdworker')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=7')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกคนงาน--'])
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-12" >
+        <div class="panel panel-info">
+
+            <div class="panel-body">
+                <div class="col-md-3">
+                    <h4><label class="label label-success"> <?php echo 'พยาบาล ER'; ?></label></h4>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'ernur1')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=2')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'ernur2')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=2')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'ernur3')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=2')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'ernur4')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=2')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'erdoctor')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=5')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกแพทย์--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'eraides')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=6')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกผู้ช่วยเหลือคนไข้--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'erworker')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=7')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกคนงาน--'])
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12" >
+        <div class="panel panel-info">
+
+            <div class="panel-body">
+                <div class="col-md-3">
+                    <h4><label class="label label-success"> <?php echo 'พยาบาล LR'; ?></label></h4>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'lrnur1')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=3')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'lrnur2')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=3')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'lrnur3')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=3')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'lrnur4')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=3')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'lrdoctor')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=5')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกแพทย์--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'lraides')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=6')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกผู้ช่วยเหลือคนไข้--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'lrworker')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=7')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกคนงาน--'])
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-12" >
+        <div class="panel panel-info">
+
+            <div class="panel-body">
+                <div class="col-md-3">
+                    <h4><label class="label label-success"> <?php echo 'พยาบาล WARD'; ?></label></h4>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'wardnur1')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=3')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'wardnur2')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=3')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'wardnur3')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=3')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                    <?=
+                    $form->field($model, 'wardnur4')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=3')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกพยาบาล--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'warddoctor')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=5')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกแพทย์--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'wardaides')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=6')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกผู้ช่วยเหลือคนไข้--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'wardworker')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=7')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกคนงาน--'])
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-12" >
+        <div class="panel panel-info">
+
+            <div class="panel-body">
+                <div class="col-md-3">
+                    <h4><label class="label label-success"> <?php echo 'ทั่วไป'; ?></label></h4>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'cardroom')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=8')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกห้องบัตร--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'launder')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=9')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกซักฟอก--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'centersupport')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=10')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกจ่ายกลาง--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'kitchen')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=11')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกโรงครัว--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'xrayroom')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=12')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือก x-ray--'])
+                    ?>
+                </div>
+                <div class="col-md-3">
+
+                    <?=
+                    $form->field($model, 'carman')->dropDownList(ArrayHelper::map(NurUserRec::find()
+                                            ->where('dept=13')
+                                            ->orderBy('code ASC')
+                                            ->all(), 'code', 'fullName'), ['prompt' => '--กรุณาเลือกคนขับรถ--'])
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="col-md-12">
         <div class="col-md-6">
             <?= $form->field($model, 'staff')->textInput(['maxlength' => true, 'value' => Yii::$app->user->displayName]) ?>
@@ -282,7 +422,7 @@ use app\models\NurUserRec;
     </div>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'บันทึก' : 'แก้ไข', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
