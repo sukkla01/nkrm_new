@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2015-04-02 00:38:14
+Date: 2015-04-02 13:38:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -389,6 +389,8 @@ CREATE TABLE `nur_ward` (
 -- ----------------------------
 -- Records of nur_ward
 -- ----------------------------
+INSERT INTO `nur_ward` VALUES ('01', 'หอผู้ป่วยทั่วไป');
+INSERT INTO `nur_ward` VALUES ('02', 'หอผู้ป่วยห้องคลอด');
 
 -- ----------------------------
 -- Table structure for `profile`
@@ -460,7 +462,7 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '1', '1', 'neo@neo.com', null, 'neo', '$2y$13$dyVw4WkZGkABf2UrGWrhHO4ZmVBv.K4puhOL59Y9jQhIdj63TlV.O', 'hhOk4MyiynKe7n4aLm3ht3qHVBAoAuKj', 'u7hIqzqX_R4kluHab-7WWfUzFRuhAdCe', '::1', '2015-04-01 14:43:44', null, '2015-03-30 08:42:15', null, null, null);
+INSERT INTO `user` VALUES ('1', '1', '1', 'neo@neo.com', null, 'neo', '$2y$13$dyVw4WkZGkABf2UrGWrhHO4ZmVBv.K4puhOL59Y9jQhIdj63TlV.O', 'hhOk4MyiynKe7n4aLm3ht3qHVBAoAuKj', 'u7hIqzqX_R4kluHab-7WWfUzFRuhAdCe', '::1', '2015-04-02 07:18:19', null, '2015-03-30 08:42:15', null, null, null);
 
 -- ----------------------------
 -- Table structure for `user_auth`
