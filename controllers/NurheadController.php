@@ -79,7 +79,7 @@ class NurheadController extends Controller
         return $this->render('create', [
                 'model' => $model,
                 'code'=>'ff',
-                'tname'=>'fdd',
+                'aaa'=>'fdd',
             ]);
     }
 

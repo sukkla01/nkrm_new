@@ -8,7 +8,7 @@ use yii\jui\DatePicker;
 /* @var $model app\models\Nurhead */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<?php echo $tname; ?>
+<?php print_r($aaa) ; ?>
 <div class="nurhead-form">
 
     <?php $form = ActiveForm::begin(); ?>
