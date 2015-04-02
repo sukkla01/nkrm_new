@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Khirimat_hos
-Source Server Version : 50525
-Source Host           : localhost:3306
+Source Server         : 192.168.1.113_3306
+Source Server Version : 50541
+Source Host           : 192.168.1.113:3306
 Source Database       : nkrm
 
 Target Server Type    : MYSQL
-Target Server Version : 50525
+Target Server Version : 50541
 File Encoding         : 65001
 
-Date: 2015-04-01 09:29:08
+Date: 2015-04-02 16:33:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `auth_assignment`
+-- Table structure for auth_assignment
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_assignment`;
 CREATE TABLE `auth_assignment` (
@@ -34,7 +34,7 @@ INSERT INTO `auth_assignment` VALUES ('admin', '1', '1426125604');
 INSERT INTO `auth_assignment` VALUES ('admin', '4', '1427078648');
 
 -- ----------------------------
--- Table structure for `auth_item`
+-- Table structure for auth_item
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_item`;
 CREATE TABLE `auth_item` (
@@ -60,7 +60,7 @@ INSERT INTO `auth_item` VALUES ('admin_test', '1', null, null, null, '1426125568
 INSERT INTO `auth_item` VALUES ('dd', '2', null, null, null, '1427111116', '1427111116');
 
 -- ----------------------------
--- Table structure for `auth_item_child`
+-- Table structure for auth_item_child
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_item_child`;
 CREATE TABLE `auth_item_child` (
@@ -79,7 +79,7 @@ INSERT INTO `auth_item_child` VALUES ('admin', '/*');
 INSERT INTO `auth_item_child` VALUES ('admin_test', 'admin');
 
 -- ----------------------------
--- Table structure for `auth_rule`
+-- Table structure for auth_rule
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_rule`;
 CREATE TABLE `auth_rule` (
@@ -95,7 +95,7 @@ CREATE TABLE `auth_rule` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `migration`
+-- Table structure for migration
 -- ----------------------------
 DROP TABLE IF EXISTS `migration`;
 CREATE TABLE `migration` (
@@ -111,7 +111,7 @@ INSERT INTO `migration` VALUES ('m000000_000000_base', '1427697730');
 INSERT INTO `migration` VALUES ('m150214_044831_init_user', '1427697735');
 
 -- ----------------------------
--- Table structure for `nur_dept`
+-- Table structure for nur_dept
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_dept`;
 CREATE TABLE `nur_dept` (
@@ -123,22 +123,75 @@ CREATE TABLE `nur_dept` (
 -- ----------------------------
 -- Records of nur_dept
 -- ----------------------------
+INSERT INTO `nur_dept` VALUES ('1', 'opd');
 
 -- ----------------------------
--- Table structure for `nur_head`
+-- Table structure for nur_er
+-- ----------------------------
+DROP TABLE IF EXISTS `nur_er`;
+CREATE TABLE `nur_er` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `vstdate` date NOT NULL COMMENT 'วันที่',
+  `vnonac` int(10) NOT NULL COMMENT 'ผู้ป่วย Non ac.illness',
+  `vemergency` int(10) NOT NULL COMMENT 'ผู้ป่วย Emergency',
+  `vresus` int(10) NOT NULL COMMENT 'ผู้ป่วย Resuscitation',
+  `vhome` int(10) NOT NULL COMMENT 'รับยากลับบ้าน',
+  `vvisit` int(10) NOT NULL COMMENT 'รับไว้รักษาต่อ',
+  `vac` int(10) NOT NULL COMMENT 'ผู้ป่วย Ac.illness',
+  `vurgent` int(10) NOT NULL COMMENT 'ผู้ป่วย Urgent',
+  `vobservations` int(10) NOT NULL COMMENT 'รับไว้สังเกตอาการ',
+  `vrefer` int(10) NOT NULL COMMENT 'ส่งต่อ',
+  `vadmit` int(10) NOT NULL COMMENT 'รับย้าย Admit จาก Ward',
+  `duty` varchar(50) NOT NULL COMMENT 'เวร',
+  `staff` varchar(50) NOT NULL COMMENT 'ผู้บันทึก',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of nur_er
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for nur_head
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_head`;
 CREATE TABLE `nur_head` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `vstdate` date DEFAULT NULL COMMENT 'วันที่',
-  `dept` varchar(10) DEFAULT NULL COMMENT 'แผนก',
-  `nur1` varchar(10) DEFAULT NULL COMMENT 'พยาบาล1',
-  `nur2` varchar(10) DEFAULT NULL COMMENT 'พยาบาล2',
-  `nur3` varchar(10) DEFAULT NULL COMMENT 'พยาบาล3',
-  `nur4` varchar(10) DEFAULT NULL COMMENT 'พยาบาล4',
-  `doctor` varchar(10) DEFAULT NULL COMMENT 'แพทย์',
-  `aides` varchar(10) DEFAULT NULL COMMENT 'ผู้ช่วยเหลือคนไข้',
-  `worker` varchar(10) DEFAULT NULL COMMENT 'คนงาน',
+  `opdnur1` varchar(10) DEFAULT NULL COMMENT 'พยาบาล1',
+  `opdnur2` varchar(10) DEFAULT NULL COMMENT 'พยาบาล2',
+  `opdnur3` varchar(10) DEFAULT NULL COMMENT 'พยาบาล3',
+  `opdnur4` varchar(10) DEFAULT NULL COMMENT 'พยาบาล4',
+  `opddoctor` varchar(10) DEFAULT NULL COMMENT 'แพทย์',
+  `opdaides` varchar(10) DEFAULT NULL COMMENT 'ผู้ช่วยเหลือคนไข้',
+  `opdworker` varchar(10) DEFAULT NULL COMMENT 'คนงาน',
+  `ernur1` varchar(10) DEFAULT NULL COMMENT 'พยาบาล1',
+  `ernur2` varchar(10) DEFAULT NULL COMMENT 'พยาบาล2',
+  `ernur3` varchar(10) DEFAULT NULL COMMENT 'พยาบาล3',
+  `ernur4` varchar(10) DEFAULT NULL COMMENT 'พยาบาล4',
+  `erdoctor` varchar(10) DEFAULT NULL COMMENT 'แพทย์',
+  `eraides` varchar(10) DEFAULT NULL COMMENT 'ผู้ช่วยเหลือคนไข้',
+  `erworker` varchar(10) DEFAULT NULL COMMENT 'คนงาน',
+  `lrnur1` varchar(10) DEFAULT NULL COMMENT 'พยาบาล1',
+  `lrnur2` varchar(10) DEFAULT NULL COMMENT 'พยาบาล2',
+  `lrnur3` varchar(10) DEFAULT NULL COMMENT 'พยาบาล3',
+  `lrnur4` varchar(10) DEFAULT NULL COMMENT 'พยาบาล4',
+  `lrdoctor` varchar(10) DEFAULT NULL COMMENT 'แพทย์',
+  `lraides` varchar(10) DEFAULT NULL COMMENT 'ผู้ช่วยเหลือคนไข้',
+  `lrworker` varchar(10) DEFAULT NULL COMMENT 'คนงาน',
+  `wardnur1` varchar(10) DEFAULT NULL COMMENT 'พยาบาล1',
+  `wardnur2` varchar(10) DEFAULT NULL COMMENT 'พยาบาล2',
+  `wardnur3` varchar(10) DEFAULT NULL COMMENT 'พยาบาล3',
+  `wardnur4` varchar(10) DEFAULT NULL COMMENT 'พยาบาล4',
+  `warddoctor` varchar(10) DEFAULT NULL COMMENT 'แพทย์',
+  `wardaides` varchar(10) DEFAULT NULL COMMENT 'ผู้ช่วยเหลือคนไข้',
+  `wardworker` varchar(10) DEFAULT NULL COMMENT 'คนงาน',
+  `cardroom` varchar(10) DEFAULT NULL,
+  `launder` varchar(10) DEFAULT NULL,
+  `centersupport` varchar(0) DEFAULT NULL,
+  `kitchen` varchar(0) DEFAULT NULL,
+  `xrayroom` varchar(0) DEFAULT NULL,
+  `carman` varchar(0) DEFAULT NULL,
   `duty` varchar(10) DEFAULT NULL COMMENT 'เวร',
   `staff` varchar(10) DEFAULT NULL COMMENT 'ผู้บันทึก',
   PRIMARY KEY (`id`)
@@ -149,7 +202,7 @@ CREATE TABLE `nur_head` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `nur_opd`
+-- Table structure for nur_opd
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_opd`;
 CREATE TABLE `nur_opd` (
@@ -163,14 +216,15 @@ CREATE TABLE `nur_opd` (
   `duty` varchar(5) DEFAULT NULL,
   `staff` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of nur_opd
 -- ----------------------------
+INSERT INTO `nur_opd` VALUES ('2', '2015-04-02', '33', '20', '12', '5', '2', '2', 'neo');
 
 -- ----------------------------
--- Table structure for `nur_user_rec`
+-- Table structure for nur_user_rec
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_user_rec`;
 CREATE TABLE `nur_user_rec` (
@@ -180,14 +234,15 @@ CREATE TABLE `nur_user_rec` (
   `lname` varchar(50) DEFAULT NULL COMMENT 'นามสกุล',
   `dept` varchar(10) DEFAULT NULL COMMENT 'แผนก',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of nur_user_rec
 -- ----------------------------
+INSERT INTO `nur_user_rec` VALUES ('1', '001', 'aaa', 'a3', '1');
 
 -- ----------------------------
--- Table structure for `profile`
+-- Table structure for profile
 -- ----------------------------
 DROP TABLE IF EXISTS `profile`;
 CREATE TABLE `profile` (
@@ -207,7 +262,7 @@ CREATE TABLE `profile` (
 INSERT INTO `profile` VALUES ('1', '1', '2015-03-30 08:42:15', null, 'the one');
 
 -- ----------------------------
--- Table structure for `role`
+-- Table structure for role
 -- ----------------------------
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
@@ -226,7 +281,7 @@ INSERT INTO `role` VALUES ('1', 'Admin', '2015-03-30 08:42:15', null, '1');
 INSERT INTO `role` VALUES ('2', 'User', '2015-03-30 08:42:15', null, '0');
 
 -- ----------------------------
--- Table structure for `user`
+-- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -256,10 +311,10 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '1', '1', 'neo@neo.com', null, 'neo', '$2y$13$dyVw4WkZGkABf2UrGWrhHO4ZmVBv.K4puhOL59Y9jQhIdj63TlV.O', 'hhOk4MyiynKe7n4aLm3ht3qHVBAoAuKj', 'u7hIqzqX_R4kluHab-7WWfUzFRuhAdCe', '::1', '2015-04-01 04:01:23', null, '2015-03-30 08:42:15', null, null, null);
+INSERT INTO `user` VALUES ('1', '1', '1', 'neo@neo.com', null, 'neo', '$2y$13$dyVw4WkZGkABf2UrGWrhHO4ZmVBv.K4puhOL59Y9jQhIdj63TlV.O', 'hhOk4MyiynKe7n4aLm3ht3qHVBAoAuKj', 'u7hIqzqX_R4kluHab-7WWfUzFRuhAdCe', '::1', '2015-04-02 08:10:58', null, '2015-03-30 08:42:15', null, null, null);
 
 -- ----------------------------
--- Table structure for `user_auth`
+-- Table structure for user_auth
 -- ----------------------------
 DROP TABLE IF EXISTS `user_auth`;
 CREATE TABLE `user_auth` (
@@ -281,7 +336,7 @@ CREATE TABLE `user_auth` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `user_key`
+-- Table structure for user_key
 -- ----------------------------
 DROP TABLE IF EXISTS `user_key`;
 CREATE TABLE `user_key` (
