@@ -6,13 +6,13 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Nuropd */
 
-$this->title = 'Create Nuropd';
-$this->params['breadcrumbs'][] = ['label' => 'Nuropds', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'บันทึกผู้ป่วยนอก';
+$this->params['breadcrumbs'][] = ['label' => 'ผู้ป่วยนอก', 'url' => ['index']];
+$this->params['breadcrumbs'][] = 'บันทึกผู้ป่วยนอก';
 ?>
 <div class="nuropd-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1>บันทึกผู้ป่วยนอก</h1>
 
     <?= $this->render('_form', [
         'model' => $model,

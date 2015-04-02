@@ -35,6 +35,7 @@ class NurOpd extends \yii\db\ActiveRecord
         return [
             [['vstdate'], 'safe'],
             [['vopd', 'ver', 'vtreatment', 'vhome', 'vrefer'], 'integer'],
+            [['vopd', 'ver', 'vtreatment', 'vhome', 'vrefer','duty','vstdate'], 'required'],
             [['duty'], 'string', 'max' => 5],
             [['staff'], 'string', 'max' => 10]
         ];
@@ -47,14 +48,14 @@ class NurOpd extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'vstdate' => 'Vstdate',
-            'vopd' => 'Vopd',
-            'ver' => 'Ver',
-            'vtreatment' => 'Vtreatment',
-            'vhome' => 'Vhome',
-            'vrefer' => 'Vrefer',
-            'duty' => 'Duty',
-            'staff' => 'Staff',
+            'vstdate' => 'วันที่',
+            'vopd' => 'ผู้ป่วยทั่วไป /คน',
+            'ver' => 'ผู้ป่วยฉุกเฉิน /คน',
+            'vtreatment' => 'รับไว้รักษาต่อ /คน',
+            'vhome' => 'รับยากลับบ้าน /คน',
+            'vrefer' => 'ส่งต่อ /คน',
+            'duty' => 'เวร',
+            'staff' => 'ผู้บันทึก',
         ];
     }
 }

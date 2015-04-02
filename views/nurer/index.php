@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\NuropdSearch */
+/* @var $searchModel app\models\NurerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'ผู้ป่วยนอก';
-$this->params['breadcrumbs'][] = 'ผู้ป่วยนอก';
+$this->title = 'Nurers';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="nuropd-index">
+<div class="nurer-index">
 
-    <h1>ผู้ป่วยนอก</h1>
+    <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('บันทึกผู้ป่วยนอก', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Nurer', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -27,11 +27,16 @@ $this->params['breadcrumbs'][] = 'ผู้ป่วยนอก';
 
             'id',
             'vstdate',
-            'vopd',
-            'ver',
-            'vtreatment',
+            'vnonac',
+            'vemergency',
+            'vresus',
             // 'vhome',
+            // 'vvisit',
+            // 'vac',
+            // 'vurgent',
+            // 'vobservations',
             // 'vrefer',
+            // 'vadmit',
             // 'duty',
             // 'staff',
 
