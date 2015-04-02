@@ -19,7 +19,7 @@ class NurheadSearch extends Nurhead
     {
         return [
             [['id'], 'integer'],
-            [['vstdate', 'dept', 'nur1', 'nur2', 'nur3', 'nur4', 'doctor', 'aides', 'worker', 'duty', 'staff'], 'safe'],
+            [['vstdate', 'opdnur1', 'opdnur2', 'opdnur3', 'opdnur4', 'opddoctor', 'opdaides', 'opdworker', 'ernur1', 'ernur2', 'ernur3', 'ernur4', 'erdoctor', 'eraides', 'erworker', 'lrnur1', 'lrnur2', 'lrnur3', 'lrnur4', 'lrdoctor', 'lraides', 'lrworker', 'wardnur1', 'wardnur2', 'wardnur3', 'wardnur4', 'warddoctor', 'wardaides', 'wardworker', 'cardroom', 'launder', 'centersupport', 'kitchen', 'xrayroom', 'carman', 'duty', 'staff'], 'safe'],
         ];
     }
 
@@ -60,14 +60,40 @@ class NurheadSearch extends Nurhead
             'vstdate' => $this->vstdate,
         ]);
 
-        $query->andFilterWhere(['like', 'dept', $this->dept])
-            ->andFilterWhere(['like', 'nur1', $this->nur1])
-            ->andFilterWhere(['like', 'nur2', $this->nur2])
-            ->andFilterWhere(['like', 'nur3', $this->nur3])
-            ->andFilterWhere(['like', 'nur4', $this->nur4])
-            ->andFilterWhere(['like', 'doctor', $this->doctor])
-            ->andFilterWhere(['like', 'aides', $this->aides])
-            ->andFilterWhere(['like', 'worker', $this->worker])
+        $query->andFilterWhere(['like', 'opdnur1', $this->opdnur1])
+            ->andFilterWhere(['like', 'opdnur2', $this->opdnur2])
+            ->andFilterWhere(['like', 'opdnur3', $this->opdnur3])
+            ->andFilterWhere(['like', 'opdnur4', $this->opdnur4])
+            ->andFilterWhere(['like', 'opddoctor', $this->opddoctor])
+            ->andFilterWhere(['like', 'opdaides', $this->opdaides])
+            ->andFilterWhere(['like', 'opdworker', $this->opdworker])
+            ->andFilterWhere(['like', 'ernur1', $this->ernur1])
+            ->andFilterWhere(['like', 'ernur2', $this->ernur2])
+            ->andFilterWhere(['like', 'ernur3', $this->ernur3])
+            ->andFilterWhere(['like', 'ernur4', $this->ernur4])
+            ->andFilterWhere(['like', 'erdoctor', $this->erdoctor])
+            ->andFilterWhere(['like', 'eraides', $this->eraides])
+            ->andFilterWhere(['like', 'erworker', $this->erworker])
+            ->andFilterWhere(['like', 'lrnur1', $this->lrnur1])
+            ->andFilterWhere(['like', 'lrnur2', $this->lrnur2])
+            ->andFilterWhere(['like', 'lrnur3', $this->lrnur3])
+            ->andFilterWhere(['like', 'lrnur4', $this->lrnur4])
+            ->andFilterWhere(['like', 'lrdoctor', $this->lrdoctor])
+            ->andFilterWhere(['like', 'lraides', $this->lraides])
+            ->andFilterWhere(['like', 'lrworker', $this->lrworker])
+            ->andFilterWhere(['like', 'wardnur1', $this->wardnur1])
+            ->andFilterWhere(['like', 'wardnur2', $this->wardnur2])
+            ->andFilterWhere(['like', 'wardnur3', $this->wardnur3])
+            ->andFilterWhere(['like', 'wardnur4', $this->wardnur4])
+            ->andFilterWhere(['like', 'warddoctor', $this->warddoctor])
+            ->andFilterWhere(['like', 'wardaides', $this->wardaides])
+            ->andFilterWhere(['like', 'wardworker', $this->wardworker])
+            ->andFilterWhere(['like', 'cardroom', $this->cardroom])
+            ->andFilterWhere(['like', 'launder', $this->launder])
+            ->andFilterWhere(['like', 'centersupport', $this->centersupport])
+            ->andFilterWhere(['like', 'kitchen', $this->kitchen])
+            ->andFilterWhere(['like', 'xrayroom', $this->xrayroom])
+            ->andFilterWhere(['like', 'carman', $this->carman])
             ->andFilterWhere(['like', 'duty', $this->duty])
             ->andFilterWhere(['like', 'staff', $this->staff]);
 

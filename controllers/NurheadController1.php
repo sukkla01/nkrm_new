@@ -61,26 +61,14 @@ class NurheadController extends Controller
     public function actionCreate()
     {
         $model = new Nurhead();
-        $connection = Yii::$app->db;
-        $data = $connection->createCommand("SELECT code,CONCAT(fname,' ',lname) AS tname FROM nur_user_rec WHERE dept=1")
-                ->queryAll();
-        
-        for($i=0;$i<sizeof($data);$i++){
-            $code[] = $data[$i]['code'];
-            $tname[] = $data[$i]['tname'];
-            
-        }
-        
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            
-        }
-        return $this->render('create', [
+            return $this->render('create', [
                 'model' => $model,
-                'code'=>'ff',
-                'tname'=>'fdd',
             ]);
+        }
     }
 
     /**

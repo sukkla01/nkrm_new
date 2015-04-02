@@ -43,16 +43,17 @@ material\MaterialAsset::register($this);
                
                 'items' => [
                     ['label' => 'หน้าหลัก', 'url' => ['/site/index']],
-                    ['label' => 'รายงาน',
+                    ['label' => 'บันทึกการตรวจการ',
                         'items' => [
-                            ['label' => 'รายงาน1', 'url' => ['/report/report/report1']],
-                            ['label' => 'รายงาน2', 'url' => ['/report/report/report2']],
-                            ['label' => 'รายงาน3', 'url' => ['/report/report/report3']],
+                            ['label' => 'ทั่วไป', 'url' => ['/nurhead']],
+                            ['label' => 'ผู้ป่วยนอก', 'url' => ['/nuropd']],
+                            ['label' => 'ผู้ป่วยฉุกเฉิน', 'url' => ['/nurer']],
                         ]
                     ],
+                    ['label' => 'ตั่งค่า', 'url' => ['/setting']],
                     ['label' => 'เกี่ยวกับเรา', 'url' => ['/site/about']],
-                    ['label' => 'ติดต่อ', 'url' => ['/site/contact']],
-                    ['label' => 'User', 'url' => ['/user']],
+                   
+                    //['label' => 'User', 'url' => ['/user']],
                     Yii::$app->user->isGuest ?
                             ['label' => 'เข้าสู่ระบบ', 'url' => ['/user/login']] :
                             ['label' => 'ออกจากระบบ (' . Yii::$app->user->displayName . ')',

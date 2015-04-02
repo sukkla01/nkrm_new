@@ -35,7 +35,7 @@ use yii\jui\DatePicker;
 
     <?= $form->field($model, 'vrefer')->textInput() ?>
 
-    <?= $form->field($model, 'duty')->dropDownList(['1'=>'ดึก','2'=>'เช้า','3'=>'บ่าย'],['prompt'=>'--เลือกเวร--']) ?>
+    <?= $form->field($model, 'duty')->dropDownList(['1'=>'ดึก','2'=>'เช้า','3'=>'บ่าย'],['prompt'=>'--กรุณาเลือกเวร--']) ?>
 
     <?= $form->field($model, 'staff')->textInput(['maxlength' => true,'value'=>Yii::$app->user->displayName]) ?>
 

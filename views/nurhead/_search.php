@@ -19,21 +19,73 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'vstdate') ?>
 
-    <?= $form->field($model, 'dept') ?>
+    <?= $form->field($model, 'opdnur1') ?>
 
-    <?= $form->field($model, 'nur1') ?>
+    <?= $form->field($model, 'opdnur2') ?>
 
-    <?= $form->field($model, 'nur2') ?>
+    <?= $form->field($model, 'opdnur3') ?>
 
-    <?php // echo $form->field($model, 'nur3') ?>
+    <?php // echo $form->field($model, 'opdnur4') ?>
 
-    <?php // echo $form->field($model, 'nur4') ?>
+    <?php // echo $form->field($model, 'opddoctor') ?>
 
-    <?php // echo $form->field($model, 'doctor') ?>
+    <?php // echo $form->field($model, 'opdaides') ?>
 
-    <?php // echo $form->field($model, 'aides') ?>
+    <?php // echo $form->field($model, 'opdworker') ?>
 
-    <?php // echo $form->field($model, 'worker') ?>
+    <?php // echo $form->field($model, 'ernur1') ?>
+
+    <?php // echo $form->field($model, 'ernur2') ?>
+
+    <?php // echo $form->field($model, 'ernur3') ?>
+
+    <?php // echo $form->field($model, 'ernur4') ?>
+
+    <?php // echo $form->field($model, 'erdoctor') ?>
+
+    <?php // echo $form->field($model, 'eraides') ?>
+
+    <?php // echo $form->field($model, 'erworker') ?>
+
+    <?php // echo $form->field($model, 'lrnur1') ?>
+
+    <?php // echo $form->field($model, 'lrnur2') ?>
+
+    <?php // echo $form->field($model, 'lrnur3') ?>
+
+    <?php // echo $form->field($model, 'lrnur4') ?>
+
+    <?php // echo $form->field($model, 'lrdoctor') ?>
+
+    <?php // echo $form->field($model, 'lraides') ?>
+
+    <?php // echo $form->field($model, 'lrworker') ?>
+
+    <?php // echo $form->field($model, 'wardnur1') ?>
+
+    <?php // echo $form->field($model, 'wardnur2') ?>
+
+    <?php // echo $form->field($model, 'wardnur3') ?>
+
+    <?php // echo $form->field($model, 'wardnur4') ?>
+
+    <?php // echo $form->field($model, 'warddoctor') ?>
+
+    <?php // echo $form->field($model, 'wardaides') ?>
+
+    <?php // echo $form->field($model, 'wardworker') ?>
+
+    <?php // echo $form->field($model, 'cardroom') ?>
+
+    <?php // echo $form->field($model, 'launder') ?>
+
+    <?php // echo $form->field($model, 'centersupport') ?>
+
+    <?php // echo $form->field($model, 'kitchen') ?>
+
+    <?php // echo $form->field($model, 'xrayroom') ?>
+
+    <?php // echo $form->field($model, 'carman') ?>
 
     <?php // echo $form->field($model, 'duty') ?>
 
