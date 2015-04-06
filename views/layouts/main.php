@@ -48,6 +48,8 @@ material\MaterialAsset::register($this);
                             ['label' => 'ทั่วไป', 'url' => ['/nurhead']],
                             ['label' => 'ผู้ป่วยนอก', 'url' => ['/nuropd']],
                             ['label' => 'ผู้ป่วยฉุกเฉิน', 'url' => ['/nurer']],
+                            ['label' => 'ผู้ป่วยใน', 'url' => ['/nuript']],
+                            ['label' => 'ผู้ป่วยห้องคลอด', 'url' => ['/nuript']],
                         ]
                     ],
                     ['label' => 'ตั่งค่า', 'url' => ['/setting']],
