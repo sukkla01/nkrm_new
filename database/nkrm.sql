@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Khirimat_hos
-Source Server Version : 50525
-Source Host           : localhost:3306
+Source Server         : 192.168.1.113_3306
+Source Server Version : 50541
+Source Host           : 192.168.1.113:3306
 Source Database       : nkrm
 
 Target Server Type    : MYSQL
-Target Server Version : 50525
+Target Server Version : 50541
 File Encoding         : 65001
 
-Date: 2015-04-02 13:38:28
+Date: 2015-04-07 14:56:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `auth_assignment`
+-- Table structure for auth_assignment
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_assignment`;
 CREATE TABLE `auth_assignment` (
@@ -34,7 +34,7 @@ INSERT INTO `auth_assignment` VALUES ('admin', '1', '1426125604');
 INSERT INTO `auth_assignment` VALUES ('admin', '4', '1427078648');
 
 -- ----------------------------
--- Table structure for `auth_item`
+-- Table structure for auth_item
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_item`;
 CREATE TABLE `auth_item` (
@@ -60,7 +60,7 @@ INSERT INTO `auth_item` VALUES ('admin_test', '1', null, null, null, '1426125568
 INSERT INTO `auth_item` VALUES ('dd', '2', null, null, null, '1427111116', '1427111116');
 
 -- ----------------------------
--- Table structure for `auth_item_child`
+-- Table structure for auth_item_child
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_item_child`;
 CREATE TABLE `auth_item_child` (
@@ -79,7 +79,7 @@ INSERT INTO `auth_item_child` VALUES ('admin', '/*');
 INSERT INTO `auth_item_child` VALUES ('admin_test', 'admin');
 
 -- ----------------------------
--- Table structure for `auth_rule`
+-- Table structure for auth_rule
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_rule`;
 CREATE TABLE `auth_rule` (
@@ -95,7 +95,7 @@ CREATE TABLE `auth_rule` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `contact`
+-- Table structure for contact
 -- ----------------------------
 DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
@@ -127,7 +127,7 @@ INSERT INTO `contact` VALUES ('8', '', 'wdwf', '260403', '', 'bhsds@d.com', '', 
 INSERT INTO `contact` VALUES ('9', '', 'dqdq', '230702', '', 'dqdq@g.com', '', '', '', '2015-04-01 20:53:53', 'sas', 'dqdq');
 
 -- ----------------------------
--- Table structure for `migration`
+-- Table structure for migration
 -- ----------------------------
 DROP TABLE IF EXISTS `migration`;
 CREATE TABLE `migration` (
@@ -143,7 +143,7 @@ INSERT INTO `migration` VALUES ('m000000_000000_base', '1427697730');
 INSERT INTO `migration` VALUES ('m150214_044831_init_user', '1427697735');
 
 -- ----------------------------
--- Table structure for `nur_bed`
+-- Table structure for nur_bed
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_bed`;
 CREATE TABLE `nur_bed` (
@@ -155,9 +155,15 @@ CREATE TABLE `nur_bed` (
 -- ----------------------------
 -- Records of nur_bed
 -- ----------------------------
+INSERT INTO `nur_bed` VALUES ('f01', '1');
+INSERT INTO `nur_bed` VALUES ('f02', '01');
+INSERT INTO `nur_bed` VALUES ('f03', '01');
+INSERT INTO `nur_bed` VALUES ('f04', '01');
+INSERT INTO `nur_bed` VALUES ('f05', '01');
+INSERT INTO `nur_bed` VALUES ('f06', '01');
 
 -- ----------------------------
--- Table structure for `nur_catogory`
+-- Table structure for nur_catogory
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_catogory`;
 CREATE TABLE `nur_catogory` (
@@ -169,9 +175,14 @@ CREATE TABLE `nur_catogory` (
 -- ----------------------------
 -- Records of nur_catogory
 -- ----------------------------
+INSERT INTO `nur_catogory` VALUES ('1', 'Self care ประเภท 1');
+INSERT INTO `nur_catogory` VALUES ('2', 'Minimal care ประเภท 2');
+INSERT INTO `nur_catogory` VALUES ('3', 'Intermediate care ประเภท 3');
+INSERT INTO `nur_catogory` VALUES ('4', 'Modified intensive care ประเภท 4');
+INSERT INTO `nur_catogory` VALUES ('5', 'ICU needed ประเภท 5');
 
 -- ----------------------------
--- Table structure for `nur_dept`
+-- Table structure for nur_dept
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_dept`;
 CREATE TABLE `nur_dept` (
@@ -200,7 +211,7 @@ INSERT INTO `nur_dept` VALUES ('14', 'ทำความสะอาด');
 INSERT INTO `nur_dept` VALUES ('15', 'อื่นๆ');
 
 -- ----------------------------
--- Table structure for `nur_er`
+-- Table structure for nur_er
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_er`;
 CREATE TABLE `nur_er` (
@@ -226,7 +237,7 @@ CREATE TABLE `nur_er` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `nur_head`
+-- Table structure for nur_head
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_head`;
 CREATE TABLE `nur_head` (
@@ -269,30 +280,17 @@ CREATE TABLE `nur_head` (
   `duty` varchar(10) DEFAULT NULL COMMENT 'เวร',
   `staff` varchar(10) DEFAULT NULL COMMENT 'ผู้บันทึก',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of nur_head
 -- ----------------------------
-INSERT INTO `nur_head` VALUES ('1', '2015-04-10', null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('2', '2015-04-10', null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('3', null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('4', null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('5', '2015-04-01', null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('6', null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('7', null, null, null, null, null, null, null, null, 'dd', 'dd', 'dd', '', '', 'ddd', 'dd', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '1', 'neo');
-INSERT INTO `nur_head` VALUES ('8', null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '2', 'neo');
-INSERT INTO `nur_head` VALUES ('9', null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('10', null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('11', null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('12', null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('13', null, null, null, null, null, null, null, null, 'aa', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('14', null, '004', null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
+INSERT INTO `nur_head` VALUES ('18', '2015-04-07', '', '', '', '', '003', '', '', '', '002', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2', 'neo');
 INSERT INTO `nur_head` VALUES ('15', null, '004', null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, '', '', '', '', '', '', '', '', '', '', '', '', 'neo');
-INSERT INTO `nur_head` VALUES ('16', '2015-04-01', '001', '', '', '004', '003', '', '', '002', '002', '', '', '', '', '', '005', '', '', '', '', '', '', '005', '', '005', '', '003', '', '', '', '', '', '', '', '', '2', 'neo');
+INSERT INTO `nur_head` VALUES ('17', '2015-04-07', '001', '004', '004', '004', '003', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2', 'neo');
 
 -- ----------------------------
--- Table structure for `nur_ipt`
+-- Table structure for nur_ipt
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_ipt`;
 CREATE TABLE `nur_ipt` (
@@ -305,15 +303,20 @@ CREATE TABLE `nur_ipt` (
   `duty` enum('ดึก','เช้า','บ่าย') DEFAULT NULL,
   `staff` varchar(10) DEFAULT NULL COMMENT 'ผู้บันทึก',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of nur_ipt
 -- ----------------------------
 INSERT INTO `nur_ipt` VALUES ('1', '2015-04-01', '1', '1', '1', '1', 'เช้า', 'dd');
+INSERT INTO `nur_ipt` VALUES ('2', '2015-04-03', '01', 'f01', '1', '1', 'เช้า', 'neo');
+INSERT INTO `nur_ipt` VALUES ('3', '2015-04-07', '01', 'f01', '2', '3', 'ดึก', 'neo');
+INSERT INTO `nur_ipt` VALUES ('4', '2015-04-07', '01', 'f01', '5', '2', 'บ่าย', 'neo');
+INSERT INTO `nur_ipt` VALUES ('5', '2015-04-03', '01', 'f02', '3', '1', 'เช้า', 'neo');
+INSERT INTO `nur_ipt` VALUES ('6', '2015-04-03', '01', 'f03', '4', '2', 'เช้า', 'neo');
 
 -- ----------------------------
--- Table structure for `nur_opd`
+-- Table structure for nur_opd
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_opd`;
 CREATE TABLE `nur_opd` (
@@ -335,7 +338,7 @@ CREATE TABLE `nur_opd` (
 INSERT INTO `nur_opd` VALUES ('2', '2015-04-02', '33', '20', '12', '5', '2', '2', 'neo');
 
 -- ----------------------------
--- Table structure for `nur_status`
+-- Table structure for nur_status
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_status`;
 CREATE TABLE `nur_status` (
@@ -355,7 +358,7 @@ INSERT INTO `nur_status` VALUES ('4', '4', 'ส่งต่อ');
 INSERT INTO `nur_status` VALUES ('5', '5', 'รับย้ายจากห้องคลอด');
 
 -- ----------------------------
--- Table structure for `nur_user_rec`
+-- Table structure for nur_user_rec
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_user_rec`;
 CREATE TABLE `nur_user_rec` (
@@ -377,7 +380,7 @@ INSERT INTO `nur_user_rec` VALUES ('4', '004', 'wwr3r', 'fefe', '1');
 INSERT INTO `nur_user_rec` VALUES ('5', '005', 'nur3', '3333', '3');
 
 -- ----------------------------
--- Table structure for `nur_ward`
+-- Table structure for nur_ward
 -- ----------------------------
 DROP TABLE IF EXISTS `nur_ward`;
 CREATE TABLE `nur_ward` (
@@ -393,7 +396,7 @@ INSERT INTO `nur_ward` VALUES ('01', 'หอผู้ป่วยทั่วไ
 INSERT INTO `nur_ward` VALUES ('02', 'หอผู้ป่วยห้องคลอด');
 
 -- ----------------------------
--- Table structure for `profile`
+-- Table structure for profile
 -- ----------------------------
 DROP TABLE IF EXISTS `profile`;
 CREATE TABLE `profile` (
@@ -413,7 +416,7 @@ CREATE TABLE `profile` (
 INSERT INTO `profile` VALUES ('1', '1', '2015-03-30 08:42:15', null, 'the one');
 
 -- ----------------------------
--- Table structure for `role`
+-- Table structure for role
 -- ----------------------------
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
@@ -432,7 +435,7 @@ INSERT INTO `role` VALUES ('1', 'Admin', '2015-03-30 08:42:15', null, '1');
 INSERT INTO `role` VALUES ('2', 'User', '2015-03-30 08:42:15', null, '0');
 
 -- ----------------------------
--- Table structure for `user`
+-- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -462,10 +465,10 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '1', '1', 'neo@neo.com', null, 'neo', '$2y$13$dyVw4WkZGkABf2UrGWrhHO4ZmVBv.K4puhOL59Y9jQhIdj63TlV.O', 'hhOk4MyiynKe7n4aLm3ht3qHVBAoAuKj', 'u7hIqzqX_R4kluHab-7WWfUzFRuhAdCe', '::1', '2015-04-02 07:18:19', null, '2015-03-30 08:42:15', null, null, null);
+INSERT INTO `user` VALUES ('1', '1', '1', 'neo@neo.com', null, 'neo', '$2y$13$dyVw4WkZGkABf2UrGWrhHO4ZmVBv.K4puhOL59Y9jQhIdj63TlV.O', 'hhOk4MyiynKe7n4aLm3ht3qHVBAoAuKj', 'u7hIqzqX_R4kluHab-7WWfUzFRuhAdCe', '::1', '2015-04-07 03:59:32', null, '2015-03-30 08:42:15', null, null, null);
 
 -- ----------------------------
--- Table structure for `user_auth`
+-- Table structure for user_auth
 -- ----------------------------
 DROP TABLE IF EXISTS `user_auth`;
 CREATE TABLE `user_auth` (
@@ -487,7 +490,7 @@ CREATE TABLE `user_auth` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `user_key`
+-- Table structure for user_key
 -- ----------------------------
 DROP TABLE IF EXISTS `user_key`;
 CREATE TABLE `user_key` (
