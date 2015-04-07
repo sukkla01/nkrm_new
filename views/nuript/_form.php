@@ -7,6 +7,7 @@ use yii\jui\DatePicker;
 use app\models\NurWard;
 use app\models\NurCatogory;
 use app\models\NurStatus;
+use app\models\NurBed;
 /* @var $this yii\web\View */
 /* @var $model app\models\Nuript */
 /* @var $form yii\widgets\ActiveForm */
@@ -35,7 +36,11 @@ use app\models\NurStatus;
                             ->all(), 'ward', 'name'), ['prompt' => '--กรุณาเลือกward--'])
     ?>
 
-    <?= $form->field($model, 'bed')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'bed')->dropDownList(ArrayHelper::map(NurBed::find()
+    
+                            ->orderBy('bedno ASC')
+                            ->all(), 'bedno', 'bedno'), ['prompt' => '--กรุณาเลือกเตียง--'])
+    ?>
 
     <?= $form->field($model, 'category')->dropDownList(ArrayHelper::map(NurCatogory::find()
     
